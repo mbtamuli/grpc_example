@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "mriyam.dev/grpc-example/helloworld";
+
+package helloworld;
+
+// The greeting service definition.
+service Greeter {
+  // A server-to-client streaming RPC.
+  rpc SayHello (HelloRequest) returns (stream HelloReply) {}
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+}
